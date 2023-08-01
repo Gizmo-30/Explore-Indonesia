@@ -1,0 +1,17 @@
+:root {
+  --db: "DMSans-Bold";
+  --dm:"DMSans-Medium";
+  --dr: "DMSans-Regular";
+  --rb: "Roboto-Black";
+  --main-red: #DD2242;
+  --blue-background: #010A20;
+  --white: #FFFFFF;
+  --text-lighten: #E0E0E0;
+  --grey-reduced: #85A3B2;
+  --paragraph-dark: #6F7787;
+  --c6: #939393;
+  --c7: #DCE8F2;
+  --black: #000;
+}
+
+/*# sourceMappingURL=root.css.map */

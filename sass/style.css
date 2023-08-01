@@ -1,0 +1,244 @@
+@import 'reset.css';
+@import 'root.css';
+@import 'fonts.css';
+.search__input {
+  font-family: var(--dr);
+  font-size: 1.125rem;
+}
+
+.burger__link {
+  font-family: var(--db);
+  font-size: 1.125rem;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-2 {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.header {
+  height: 100vh;
+  background: url("../img/webp/image-01.webp") 0 0 no-repeat;
+  position: relative;
+}
+.header__shadow {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(193deg, rgba(0, 0, 0, 0.31) 0%, rgba(0, 0, 0, 0.29) 100%);
+  position: absolute;
+}
+.header__wrapper {
+  padding: 28px;
+}
+.header .nav {
+  display: flex;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+}
+.header .nav__menu {
+  display: flex;
+  flex: 0 1 78%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .nav__links {
+  display: flex;
+  -moz-column-gap: 62.1px;
+       column-gap: 62.1px;
+}
+.header .nav__link {
+  display: block;
+  color: var(--white);
+  font-family: var(--db);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+.header .nav__icons {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.header .nav__seacrh {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.header .nav__burger-icon {
+  z-index: 5;
+  width: 18px;
+  height: 12px;
+  position: relative;
+}
+.header .nav__burger-icon span {
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header .nav__burger-icon::before, .header .nav__burger-icon::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  position: absolute;
+  left: 0;
+}
+.header .nav__burger-icon::before {
+  top: 0;
+}
+.header .nav__burger-icon::after {
+  bottom: 0;
+}
+
+.burger {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(1, 10, 32, 0.4);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s ease-in 0.3s;
+}
+.burger__content {
+  width: 20%;
+  height: 100%;
+  background: var(--white);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2% 4%;
+  display: flex;
+  align-items: center;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in 0s;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.burger__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.burger__link {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--main-red);
+}
+.burger.active {
+  transition: all 0.3s ease-in 0s;
+  opacity: 1;
+  z-index: 2;
+}
+.burger.active .burger__content {
+  transition: all 0.4s ease-in 0.3s;
+  transform: translateX(0);
+}
+.burger__close {
+  position: absolute;
+  top: 3%;
+  right: 10%;
+}
+
+.closeBtn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.closeBtn::before, .closeBtn::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: var(--blue-background);
+}
+.closeBtn::before {
+  transform: rotate(45deg);
+}
+.closeBtn::after {
+  transform: rotate(-45deg);
+}
+
+.search__input {
+  display: block;
+  color: var(--blue-background);
+  opacity: 0.6;
+  transition: all 0.5s linear 0s;
+  width: 0;
+  height: 30px;
+  border-radius: 5px;
+}
+.search.active .search__input {
+  width: 300px;
+  padding: 20px 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  -moz-column-gap: 7px;
+       column-gap: 7px;
+}
+.logo__title {
+  font-family: var(--rb);
+  font-size: 1.715rem;
+  line-height: 0.792em;
+  letter-spacing: 0.013em;
+  color: var(--white);
+}
+
+.button {
+  position: relative;
+}
+.button__line {
+  display: block;
+  position: absolute;
+}
+.button__line_1 {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--main-red));
+}
+.button__line_2 {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--main-red));
+}
+.button__line_3 {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, var(--main-red));
+}
+.button__line_4 {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--main-red));
+}/*# sourceMappingURL=style.css.map */
