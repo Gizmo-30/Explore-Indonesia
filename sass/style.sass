@@ -12,7 +12,7 @@ $inputWidth: 300px
     font-size: 1.125rem
 body.lock
     overflow: hidden
-    
+
 body._screen.lock
     padding-right: 17px
 
@@ -28,14 +28,14 @@ body._screen.lock
 
 .container-3
     width: 80vw
-    margin-left: auto 
+    margin-left: auto
     display: flex
     flex-direction: column
     justify-content: space-between
     flex: 1 0 auto
     @media(max-width: 1024px)
         width: 100%
-        padding: 0 28px 
+        padding: 0 28px
         flex: 1 1 auto
     @media(max-width: 900px)
         padding: 0px
@@ -47,12 +47,12 @@ body._screen.lock
     height: 100vh
     background: url('../img/webp/image-01.webp') center/cover no-repeat
     position: relative
-    
-    @media(max-width: 900px) 
-        height: 200%
-    @media(max-width: 768px) 
+
+    @media(max-width: 900px)
+        height: 300%
+    @media(max-width: 768px)
         height: 185%
-    @media(max-width: 600px) 
+    @media(max-width: 600px)
         height: 180%
 
     &__shadow
@@ -131,7 +131,6 @@ body._screen.lock
                 top: 0
             &::after
                 bottom: 0
-    
 
     &__content
         display: flex
@@ -181,7 +180,6 @@ body._screen.lock
             width: 100%
         @media(max-width: 600px)
             padding: 30px
-
 
     &__card_video
         height: 100%
@@ -264,7 +262,7 @@ body._screen.lock
         display: flex
         flex-direction: column
         row-gap: 20px
-        @media(max-width: 600px) 
+        @media(max-width: 600px)
             row-gap: 35px
 
     &__link
@@ -492,3 +490,106 @@ body._screen.lock
     &.video__state_playing::after, &.video__state_playing::before
         opacity: 0
         user-select: none
+
+.section
+    &__background-img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &__background
+        position: relative
+        width: 100%
+
+.section-01
+    background: var(--blue-background)
+
+    &__shadow
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+    &__shadow_start
+        background: linear-gradient(0deg, #010A20 0%, rgba(1, 10, 32, 0.00) 100%)
+    &__shadow_end
+        background: linear-gradient(180deg, #010A20 0%, rgba(1, 10, 32, 0.00) 100%)
+    &__background
+        height: 100%
+    &__background-img
+        opacity: 0.1
+    &__start
+        justify-content: flex-end
+        padding-bottom: 97px
+    
+    &__end 
+        padding-top: 97px
+        justify-content: flex-start
+        @media(max-width: 900px) 
+            .section-01__content
+                flex-direction: column-reverse
+    
+    &__wrapper
+        height: 100vh
+        position: relative
+        display: flex
+        flex-direction: column
+        @media(max-width: 900px)
+            padding: 0px
+            justify-content: center
+            height: 700px
+            // height: calc(500px + (700 - 500) * ((100vw - 425px) / (900 - 425)))
+        @media(max-width: 600px)
+            height: 650px
+    
+    &__content
+        position: absolute
+        left: 50%
+        transform: translate(-50%,0)
+        display: flex
+        justify-content: space-between
+        max-width: 1200px
+        width: 100%
+        height: 50%
+        padding: 0 28px 
+        column-gap: 32px
+        @media(max-width: 900px)
+            padding: 28px
+            flex-wrap: wrap
+            max-width: unset
+            row-gap: 33px
+            height: unset
+
+
+    &__info
+        max-width: 400px
+        width: 100%
+        align-self: center
+        @media(max-width: 900px)
+            max-width: unset
+
+    &__paragraph
+        @extend %paragraph
+        line-height: 1.555em
+        color: var(--text-lighten)
+        margin: 15px 0 32px 0
+    &__title
+        color: var(--white)
+    &__btn
+        max-width: 200px
+        width: 100%
+
+    &__content-img
+        width: 50%
+        border-radius: 10px
+        object-fit: cover
+        @media(max-width: 900px)
+            width: 100%
+            height: 300px
+        @media(max-width: 600px)
+            height: 232px
+
+.title
+    &__number_02
+        font-family: var(--db)
+        font-size: 2.625rem
+        line-height: 1.19em
