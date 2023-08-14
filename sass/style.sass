@@ -10,6 +10,18 @@ $inputWidth: 300px
 %links
     font-family: var(--db)
     font-size: 1.125rem
+
+.title
+    &_number_01
+        font-family: var(--db)
+        font-size: 3.125rem
+        line-height: 1.5em
+
+    &_number_02
+        font-family: var(--db)
+        font-size: 2.625rem
+        line-height: 1.19em
+
 body.lock
     overflow: hidden
 
@@ -22,7 +34,7 @@ body._screen.lock
     margin: 0 auto
 
 .container-2
-    max-width: 1500px
+    max-width: 1400px
     width: 100%
     margin: 0 auto
 
@@ -223,7 +235,7 @@ body._screen.lock
         font-size: 1rem
         transition: all 0.3s linear 0s
         body._screen &:hover
-            color: var(--main-red)
+        color: var(--main-red)
 
 .burger
     position: fixed
@@ -370,24 +382,24 @@ body._screen.lock
         width: 100%
         height: 2px
         background: linear-gradient(90deg, transparent, var(--main-red))
-    body._screen &__line_2
+        body._screen &__line_2
         bottom: 0
         right: -100%
         width: 100%
         height: 2px
         background: linear-gradient(270deg, transparent, var(--main-red))
     body._screen &__line_3
-        bottom: -100%
-        left: 0
-        width: 2px
-        height: 100%
-        background: linear-gradient(0deg, transparent, var(--main-red))
-    body._screen &__line_4
-        top: -100%
-        right: 0
-        width: 2px
-        height: 100%
-        background: linear-gradient(180deg, transparent, var(--main-red))
+        ottom: -100%
+        eft: 0
+        idth: 2px
+        eight: 100%
+        ackground: linear-gradient(0deg, transparent, var(--main-red))
+        ody._screen &__line_4
+        op: -100%
+        ight: 0
+        idth: 2px
+        eight: 100%
+        ackground: linear-gradient(180deg, transparent, var(--main-red))
     body._screen &__animation_redBorder:hover &__line_1
         left: 100%
         transition: all 0.5s linear 0.5s
@@ -395,8 +407,8 @@ body._screen.lock
         right: 100%
         transition: all 0.5s linear 0.5s
     body._screen &__animation_redBorder:hover &__line_3
-        bottom: 100%
-        transition: all 0.5s linear 0.25s
+        ottom: 100%
+        ransition: all 0.5s linear 0.25s
     body._screen &__animation_redBorder:hover &__line_4
         top: 100%
         transition: all 0.5s linear 0.25s
@@ -457,6 +469,39 @@ body._screen.lock
         100%
             background: rgb(211, 46, 73)
             transform: scale(1.1)
+
+    &_icon_arrow
+        display: inline-block
+        position: relative
+        width: 14px
+        height: 25px
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        &::before, &::after
+            content: ''
+            display: block
+            width: 18px
+            border-radius: 30px
+            height: 5px
+            position: absolute
+            background: var(--blue-background)
+        &.disabled
+            pointer-events: none
+            
+    &_icon_arrowLeft
+        &::before
+            transform: translate(0, 5px) rotate(45deg)
+
+        &::after
+            transform: translate(0, -5px) rotate(-45deg)
+
+    &_icon_arrowRight
+        &::before
+            transform: translate(0, 5px) rotate(-45deg)
+
+        &::after
+            transform: translate(0, -5px) rotate(45deg)
 
 .video
     position: relative
@@ -520,14 +565,14 @@ body._screen.lock
     &__start
         justify-content: flex-end
         padding-bottom: 97px
-    
-    &__end 
+
+    &__end
         padding-top: 97px
         justify-content: flex-start
-        @media(max-width: 900px) 
+        @media(max-width: 900px)
             .section-01__content
                 flex-direction: column-reverse
-    
+
     &__wrapper
         height: 100vh
         position: relative
@@ -540,7 +585,7 @@ body._screen.lock
             // height: calc(500px + (700 - 500) * ((100vw - 425px) / (900 - 425)))
         @media(max-width: 600px)
             height: 650px
-    
+
     &__content
         position: absolute
         left: 50%
@@ -550,7 +595,7 @@ body._screen.lock
         max-width: 1200px
         width: 100%
         height: 50%
-        padding: 0 28px 
+        padding: 0 28px
         column-gap: 32px
         @media(max-width: 900px)
             padding: 28px
@@ -558,7 +603,6 @@ body._screen.lock
             max-width: unset
             row-gap: 33px
             height: unset
-
 
     &__info
         max-width: 400px
@@ -575,6 +619,7 @@ body._screen.lock
     &__title
         color: var(--white)
     &__btn
+        position: static
         max-width: 200px
         width: 100%
 
@@ -588,8 +633,105 @@ body._screen.lock
         @media(max-width: 600px)
             height: 232px
 
-.title
-    &__number_02
+.section-02
+    background: url('../img/webp/image-11.webp') center/cover no-repeat
+    display: flex
+    flex-direction: column
+    row-gap: 886px
+    &__title
+        text-align: center
+    &__content
+        margin-top: 127px
+
+.section-03
+    background: rgba(2,12,33,0.9)
+    color: var(--white)
+    height: 794px
+    display: flex
+    align-items: center
+    &__title
+        font-size: 3.75rem
+    &__content
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: 1fr
+        row-gap: 45px
+        column-gap: 120px
+    &__info
+        grid-column: span 1
+    &__info:first-child
+        grid-column: span 3
+        text-align: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        row-gap: 36.83px
+    .section-03__info .section-03__paragraph
+        max-width: 484px
+        width: 100%
+    &__paragraph
+        @extend %paragraph
+        line-height: 1.555em
+        letter-spacing: 0.02777em
+        text-align: center
+    &__sub-title
+        color: var(--main-red)
+        text-align: center
         font-family: var(--db)
-        font-size: 2.625rem
-        line-height: 1.19em
+        font-size: 2.6335625rem
+        line-height: 1.1666em
+        letter-spacing: 0.009em
+        margin-bottom: 18.89px
+.slider
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    padding: 0 28px
+    &__block
+        overflow: hidden
+
+    &__wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+        column-gap: 60px
+        margin: 44px 0 28px 0
+        width: 100%
+        @media(max-width: 1024px)
+            column-gap: 30px
+        @media(max-width: 768px)
+            column-gap: 15px
+
+    &__indicatros
+        display: flex
+        column-gap: 16px
+        margin: 0 auto
+    &__indicator
+        display: block
+        width: 19px
+        height: 19px
+        background: var(--grey-reduced)
+        border-radius: 50%
+        transition: all 0.5s ease 0s
+        
+        &.active
+            background: var(--main-red)
+    &__track
+        display: flex
+        column-gap: 31px
+        max-width: 1200px
+        width: 100%
+        transition: all 0.8s ease 0s
+        
+    &__item
+        min-width: 33.33%
+        height: 200px
+        user-select: none
+        pointer-events: none
+
+    &__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        border-radius: 10px

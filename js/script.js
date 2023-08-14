@@ -17,7 +17,19 @@ if (isMobile.any()) {
 
 const searchIcon = document.querySelector('.search__icon'),
     searchBlock = document.querySelector('.search'),
-    searchinput = document.querySelector('.search');
+    searchinput = document.querySelector('.search'),
+    // slider
+    sliderBlock = document.querySelector('.slider__block'),
+    sliderTrack = document.querySelector('.slider__track'),
+    btnPrev = document.querySelector('.slider .button_icon_arrowLeft'),
+    btnNext = document.querySelector('.slider .button_icon_arrowRight'),
+    sliderItem = [...document.querySelectorAll('.slider__item')],
+    sliderIndicator = [...document.querySelectorAll('.slider__indicator')],
+    // burger
+    burger = document.querySelector('.burger'),
+    burgerContent = document.querySelector('.burger__content'),
+    burgerOpen = document.querySelector('.nav__burger-icon'),
+    burgerClose = document.querySelector('.burger__close');
     
 
 searchIcon.addEventListener('click', (e) => {
@@ -29,11 +41,6 @@ searchIcon.addEventListener('click', (e) => {
         }
     })    
 })
-
-const burger = document.querySelector('.burger'),
-    burgerContent = document.querySelector('.burger__content'),
-    burgerOpen = document.querySelector('.nav__burger-icon'),
-    burgerClose = document.querySelector('.burger__close');
 
 
 
@@ -49,11 +56,6 @@ burgerOpen.addEventListener('click', (e) => {
         }
     })
 })
-
-// navLinks = () => {
-    
-// }
-
 
 
 if (window.innerWidth <= 1024) {
@@ -94,12 +96,74 @@ videoBlock.forEach(element => {
     })
 });
 
-// if (window.innerWidth <= 900) {
-//     const headernav = document.querySelector('.header__shadow'),
-//          headerShadow = document.querySelector('.header__shadow'),
-// }
 
+// SLIDER
 
+var position = 0
+
+var slidesToShow
+if (window.innerWidth <= 1024) {
+    slidesToShow = 2
+} if (window.innerWidth <= 768) {
+    slidesToShow = 1
+} else slidesToShow = 3
+
+var slidesToScroll = slidesToShow
+var gap = parseFloat(window.getComputedStyle(sliderTrack, null).getPropertyValue("column-gap"))
+var itemWidth = Math.ceil((sliderBlock.clientWidth - gap * (slidesToShow - 1)) / slidesToShow)
+
+for (let i = 0; i < sliderItem.length; i++) {
+    sliderItem[i].style = `min-width: ${itemWidth}px`
+}
+
+var index = slidesToShow
+
+checkBtn()
+
+btnNext.addEventListener('click', () => {
+    let moveSize = slidesToScroll * itemWidth + gap * slidesToScroll 
+    let itemLeft = Math.ceil(sliderItem.length - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth)
+    position -= itemLeft >= slidesToScroll ? moveSize : itemLeft * itemWidth + gap
+    moveAct(position)
+    index += slidesToShow
+    sliderIndicator[index - 1].classList.add('active')
+    sliderIndicator[index - 2].classList.add('active')
+    sliderIndicator[index - 3].classList.add('active')
+})
+
+btnPrev.addEventListener('click', () => {
+    let moveSize = slidesToScroll * itemWidth + gap * slidesToScroll
+    let itemLeft = Math.floor(Math.abs(position) / itemWidth)
+    position += itemLeft >= slidesToScroll ? moveSize : itemLeft * itemWidth + gap 
+    moveAct(position)
+    index -= slidesToShow
+    sliderIndicator[index - 1].classList.add('active')
+    sliderIndicator[index - 2].classList.add('active')
+    sliderIndicator[index - 3].classList.add('active')
+})
+
+function moveAct(position) {
+    sliderTrack.style = `transform: translateX(${position}px)`
+    checkBtn()
+    indicators()
+}
+
+function indicators() {
+    sliderIndicator.forEach(element => {
+        element.classList.remove('active')
+    });
+    
+}
+
+function checkBtn() {
+    if (position === 0) {
+        btnPrev.classList.add('disabled')
+    } else btnPrev.classList.remove('disabled')
+
+    if (position <= - (sliderItem.length - slidesToShow) * itemWidth) {
+        btnNext.classList.add('disabled')
+    } else btnNext.classList.remove('disabled')
+}
 
 
 
