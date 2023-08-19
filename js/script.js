@@ -101,12 +101,18 @@ videoBlock.forEach(element => {
 
 var position = 0
 
+
+
 var slidesToShow
 if (window.innerWidth <= 1024) {
     slidesToShow = 2
-} if (window.innerWidth <= 768) {
+} if (window.innerWidth <= 700) {
     slidesToShow = 1
-} else slidesToShow = 3
+} if (window.innerWidth > 1024){
+    slidesToShow = 3
+}
+
+console.log(slidesToShow);
 
 var slidesToScroll = slidesToShow
 var gap = parseFloat(window.getComputedStyle(sliderTrack, null).getPropertyValue("column-gap"))
@@ -117,7 +123,9 @@ for (let i = 0; i < sliderItem.length; i++) {
 }
 
 var index = slidesToShow
-
+for (let i = 0; i < index; i++) {
+    sliderIndicator[i].classList.add('active')
+}
 checkBtn()
 
 btnNext.addEventListener('click', () => {
@@ -126,9 +134,7 @@ btnNext.addEventListener('click', () => {
     position -= itemLeft >= slidesToScroll ? moveSize : itemLeft * itemWidth + gap
     moveAct(position)
     index += slidesToShow
-    sliderIndicator[index - 1].classList.add('active')
-    sliderIndicator[index - 2].classList.add('active')
-    sliderIndicator[index - 3].classList.add('active')
+    classIndicators()
 })
 
 btnPrev.addEventListener('click', () => {
@@ -137,9 +143,7 @@ btnPrev.addEventListener('click', () => {
     position += itemLeft >= slidesToScroll ? moveSize : itemLeft * itemWidth + gap 
     moveAct(position)
     index -= slidesToShow
-    sliderIndicator[index - 1].classList.add('active')
-    sliderIndicator[index - 2].classList.add('active')
-    sliderIndicator[index - 3].classList.add('active')
+    classIndicators()
 })
 
 function moveAct(position) {
@@ -152,7 +156,12 @@ function indicators() {
     sliderIndicator.forEach(element => {
         element.classList.remove('active')
     });
-    
+}
+
+function classIndicators() {
+    for (let i = 0; i < slidesToShow; i++) {
+        sliderIndicator[index - i - 1].classList.add('active')
+    }
 }
 
 function checkBtn() {

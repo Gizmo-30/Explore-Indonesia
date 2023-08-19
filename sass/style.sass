@@ -37,6 +37,7 @@ body._screen.lock
     max-width: 1400px
     width: 100%
     margin: 0 auto
+    padding: 0 30px 
 
 .container-3
     width: 80vw
@@ -641,7 +642,7 @@ body._screen.lock
     &__title
         text-align: center
     &__content
-        margin-top: 127px
+        margin-top: calc(45px + (127 - 45) * ((100vw - 425px) / (1920 - 425)))
 
 .section-03
     background: rgba(2,12,33,0.9)
@@ -650,22 +651,38 @@ body._screen.lock
     display: flex
     align-items: center
     &__title
-        font-size: 3.75rem
-    &__content
-        display: grid
-        grid-template-columns: repeat(3, 1fr)
-        grid-template-rows: 1fr
-        row-gap: 45px
-        column-gap: 120px
-    &__info
-        grid-column: span 1
-    &__info:first-child
-        grid-column: span 3
         text-align: center
+        margin-bottom: 10px
+    &__content
         display: flex
         flex-direction: column
         align-items: center
-        row-gap: 36.83px
+        row-gap: 39px
+        @media(max-width: 600px)
+            row-gap: 49px
+
+    &_position_end
+        display: flex
+        width: 100%
+        justify-content: space-between
+        column-gap: 30px
+        flex-wrap: wrap
+        @media(max-width: 1110px)
+            justify-content: center
+            gap: 22px 10px
+        @media(max-width: 710px)
+            gap: 43px 0px
+
+
+    &_position_start &__paragraph
+        max-width: 480px
+        width: 100%
+
+
+    &__info
+        max-width: 350px
+        width: 100%
+
     .section-03__info .section-03__paragraph
         max-width: 484px
         width: 100%
@@ -687,7 +704,6 @@ body._screen.lock
     flex-direction: column
     align-items: center
 
-    padding: 0 28px
     &__block
         overflow: hidden
 
