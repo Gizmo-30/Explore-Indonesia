@@ -32,6 +32,8 @@ const searchIcon = document.querySelector('.search__icon'),
     burgerClose = document.querySelector('.burger__close');
     
 
+
+
 searchIcon.addEventListener('click', (e) => {
     searchBlock.classList.add('active')
 
@@ -103,16 +105,13 @@ var position = 0
 
 
 
-var slidesToShow
+var slidesToShow = 3
 if (window.innerWidth <= 1024) {
     slidesToShow = 2
 } if (window.innerWidth <= 700) {
     slidesToShow = 1
-} if (window.innerWidth > 1024){
-    slidesToShow = 3
-}
+} 
 
-console.log(slidesToShow);
 
 var slidesToScroll = slidesToShow
 var gap = parseFloat(window.getComputedStyle(sliderTrack, null).getPropertyValue("column-gap"))

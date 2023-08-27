@@ -1,7 +1,7 @@
 @import 'reset.css';
 @import 'root.css';
 @import 'fonts.css';
-.section-03__paragraph, .section-01__paragraph, .search__input, .header__card-paragraph {
+.section-04__paragraph, .section-03__paragraph, .section-01__paragraph, .search__input, .header__card-paragraph {
   font-family: var(--dr);
   font-size: 1.125rem;
 }
@@ -224,11 +224,6 @@ body._screen.lock {
   margin-top: 21px;
   font-size: 1.25rem;
 }
-@media (max-width: 500px) {
-  .header__btn {
-    max-width: none;
-  }
-}
 .header__extraInfo {
   display: flex;
   align-items: flex-end;
@@ -304,8 +299,11 @@ body._screen.lock {
   font-family: var(--db);
   font-size: 1rem;
   transition: all 0.3s linear 0s;
+}
+body._screen .header__massenger:hover {
   color: var(--main-red);
 }
+
 .burger {
   position: fixed;
   width: 100vw;
@@ -452,161 +450,6 @@ body._screen.lock {
   color: var(--white);
 }
 
-.button {
-  display: inline-block;
-  text-align: center;
-  color: var(--white);
-  font-family: var(--db);
-  font-size: 1.125rem;
-  line-height: 1.5em;
-  background: var(--main-red);
-  border-radius: 211px;
-  padding: 20px;
-}
-body._screen .button__animation_redBorder {
-  transition: all 0.3s linear 0.3s;
-  overflow: hidden;
-  position: relative;
-  padding: 10px 5px;
-}
-body._screen .button__line {
-  display: block;
-  position: absolute;
-}
-body._screen .button__line_1 {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--main-red));
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, var(--main-red));
-}
-body._screen .button__line_3 {
-  ottom: -100%;
-  eft: 0;
-  idth: 2px;
-  eight: 100%;
-  ackground: linear-gradient(0deg, transparent, var(--main-red));
-  op: -100%;
-  ight: 0;
-  idth: 2px;
-  eight: 100%;
-  ackground: linear-gradient(180deg, transparent, var(--main-red));
-}
-body._screen .button__animation_redBorder:hover .button__line_1 {
-  left: 100%;
-  transition: all 0.5s linear 0.5s;
-}
-body._screen .button__animation_redBorder:hover .button__line_2 {
-  right: 100%;
-  transition: all 0.5s linear 0.5s;
-}
-body._screen .button__animation_redBorder:hover .button__line_3 {
-  ottom: 100%;
-  ransition: all 0.5s linear 0.25s;
-}
-body._screen .button__animation_redBorder:hover .button__line_4 {
-  top: 100%;
-  transition: all 0.5s linear 0.25s;
-}
-body._screen .button__animation_redBorder:hover {
-  color: var(--main-red);
-  transition: all 0.2s linear 0.6s;
-}
-.button__animation_dropEffect {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-.button__drop {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 211px;
-  background: var(--main-red);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: parentDropEffect 1.5s ease-in 3s infinite alternate;
-  z-index: -1;
-}
-.button__drop::after, .button__drop::before {
-  content: "";
-  display: block;
-  width: inherit;
-  height: inherit;
-  background: var(--main-red);
-  position: absolute;
-  border-radius: inherit;
-}
-.button__drop_1::before {
-  animation: dropEffect 3s ease-in 1.5s infinite;
-}
-.button__drop_2::before {
-  animation: dropEffect 3s ease-in 2.5s infinite;
-}
-.button__drop_2::after {
-  animation: dropEffect 3s ease-in 3s infinite;
-}
-.button__drop_1::after {
-  animation: dropEffect 3s ease-in 4s infinite;
-}
-@keyframes dropEffect {
-  0% {
-    opacity: 0.2;
-  }
-  100% {
-    width: 200%;
-    height: 200%;
-    opacity: 0;
-  }
-}
-@keyframes parentDropEffect {
-  100% {
-    background: rgb(211, 46, 73);
-    transform: scale(1.1);
-  }
-}
-.button_icon_arrow {
-  display: inline-block;
-  position: relative;
-  width: 14px;
-  height: 25px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-.button_icon_arrow::before, .button_icon_arrow::after {
-  content: "";
-  display: block;
-  width: 18px;
-  border-radius: 30px;
-  height: 5px;
-  position: absolute;
-  background: var(--blue-background);
-}
-.button_icon_arrow.disabled {
-  pointer-events: none;
-}
-.button_icon_arrowLeft::before {
-  transform: translate(0, 5px) rotate(45deg);
-}
-.button_icon_arrowLeft::after {
-  transform: translate(0, -5px) rotate(-45deg);
-}
-.button_icon_arrowRight::before {
-  transform: translate(0, 5px) rotate(-45deg);
-}
-.button_icon_arrowRight::after {
-  transform: translate(0, -5px) rotate(45deg);
-}
-
 .video {
   position: relative;
 }
@@ -748,6 +591,12 @@ body._screen .button__animation_redBorder:hover {
   max-width: 200px;
   width: 100%;
 }
+@media (max-width: 500px) {
+  .section-01__btn {
+    width: 100%;
+    max-width: none;
+  }
+}
 .section-01__content-img {
   width: 50%;
   border-radius: 10px;
@@ -784,6 +633,11 @@ body._screen .button__animation_redBorder:hover {
   height: 794px;
   display: flex;
   align-items: center;
+}
+@media (max-width: 600px) {
+  .section-03 {
+    padding: 30px 0;
+  }
 }
 .section-03__title {
   text-align: center;
@@ -843,6 +697,123 @@ body._screen .button__animation_redBorder:hover {
   line-height: 1.1666em;
   letter-spacing: 0.009em;
   margin-bottom: 18.89px;
+}
+
+.section-04 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .section-04 {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 500px) {
+  .section-04 {
+    height: 110%;
+  }
+}
+@media (max-width: 500px) {
+  .section-04 {
+    height: 120%;
+  }
+}
+.section-04__img {
+  width: 100%;
+  position: absolute;
+  transform: scale(0.8);
+}
+.section-04__img:nth-of-type(1) {
+  top: -90%;
+  left: -75%;
+  animation: rotate 50s linear infinite;
+}
+@media (max-width: 600px) {
+  .section-04__img:nth-of-type(1) {
+    top: -70%;
+    left: -70%;
+  }
+}
+@media (max-width: 500px) {
+  .section-04__img:nth-of-type(1) {
+    top: -50%;
+    left: -50%;
+  }
+}
+@media (max-width: 400px) {
+  .section-04__img:nth-of-type(1) {
+    top: -45%;
+    left: -45%;
+  }
+}
+.section-04__img:nth-of-type(2) {
+  bottom: -90%;
+  right: -75%;
+  animation: rotate 50s linear infinite;
+}
+@media (max-width: 600px) {
+  .section-04__img:nth-of-type(2) {
+    bottom: -70%;
+    right: -70%;
+  }
+}
+@media (max-width: 500px) {
+  .section-04__img:nth-of-type(2) {
+    bottom: -50%;
+    right: -50%;
+  }
+}
+@media (max-width: 400px) {
+  .section-04__img:nth-of-type(2) {
+    bottom: -45%;
+    right: -45%;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.section-04__paragraph {
+  max-width: 400px;
+  width: 100%;
+  color: var(--paragraph-dark);
+  line-height: 1.5555em;
+  margin: 32px 0 36px 0;
+}
+@media (max-width: 600px) {
+  .section-04__paragraph {
+    max-width: none;
+    margin: 36px 0 41px 0;
+  }
+}
+.section-04__title {
+  max-width: 600px;
+}
+@media (max-width: 600px) {
+  .section-04__title {
+    font-size: 2.5rem;
+    line-height: 1.15em;
+  }
+}
+.section-04__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+.section-04__btn {
+  max-width: 210px;
+  width: 100%;
 }
 
 .slider {
@@ -905,6 +876,170 @@ body._screen .button__animation_redBorder:hover {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--db);
+  font-size: 1.125rem;
+  line-height: 1.5em;
+  background: var(--main-red);
+  border-radius: 211px;
+  padding: 20px;
+}
+@media (max-width: 500px) {
+  .button {
+    max-width: none;
+  }
+}
+body._screen .button__animation_redBorder {
+  transition: all 0.3s linear 0.3s;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 5px;
+}
+body._screen .button__line {
+  display: block;
+  position: absolute;
+}
+body._screen .button__line_1 {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--main-red));
+}
+body._screen .button__line_2 {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--main-red));
+}
+body._screen .button__line_3 {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, var(--main-red));
+}
+body._screen .button__line_4 {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--main-red));
+}
+body._screen .button__animation_redBorder:hover .button__line_1 {
+  left: 100%;
+  transition: all 0.5s linear 0.5s;
+}
+body._screen .button__animation_redBorder:hover .button__line_2 {
+  right: 100%;
+  transition: all 0.5s linear 0.5s;
+}
+body._screen .button__animation_redBorder:hover .button__line_3 {
+  bottom: 100%;
+  transition: all 0.5s linear 0.25s;
+}
+body._screen .button__animation_redBorder:hover .button__line_4 {
+  top: 100%;
+  transition: all 0.5s linear 0.25s;
+}
+body._screen .button__animation_redBorder:hover {
+  color: var(--main-red);
+  transition: all 0.2s linear 0.6s;
+}
+.button__animation_dropEffect {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.button__drop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 211px;
+  background: var(--main-red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: parentDropEffect 1.5s ease-in 3s infinite alternate;
+  z-index: -1;
+}
+.button__drop::after, .button__drop::before {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: var(--main-red);
+  position: absolute;
+  border-radius: inherit;
+}
+.button__drop_1::before {
+  animation: dropEffect 3s ease-in 1.5s infinite;
+}
+.button__drop_2::before {
+  animation: dropEffect 3s ease-in 2.5s infinite;
+}
+.button__drop_2::after {
+  animation: dropEffect 3s ease-in 3s infinite;
+}
+.button__drop_1::after {
+  animation: dropEffect 3s ease-in 4s infinite;
+}
+@keyframes dropEffect {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+@keyframes parentDropEffect {
+  100% {
+    background: rgb(211, 46, 73);
+    transform: scale(1.1);
+  }
+}
+.button_icon_arrow {
+  display: inline-block;
+  position: relative;
+  width: 14px;
+  height: 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.button_icon_arrow::before, .button_icon_arrow::after {
+  content: "";
+  display: block;
+  width: 18px;
+  border-radius: 30px;
+  height: 5px;
+  position: absolute;
+  background: var(--blue-background);
+}
+.button_icon_arrow.disabled {
+  pointer-events: none;
+}
+.button_icon_arrowLeft::before {
+  transform: translate(0, 5px) rotate(45deg);
+}
+.button_icon_arrowLeft::after {
+  transform: translate(0, -5px) rotate(-45deg);
+}
+.button_icon_arrowRight::before {
+  transform: translate(0, 5px) rotate(-45deg);
+}
+.button_icon_arrowRight::after {
+  transform: translate(0, -5px) rotate(45deg);
 }
 
 /*# sourceMappingURL=style.css.map */
