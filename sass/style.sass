@@ -370,7 +370,8 @@ body._screen.lock
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
-
+    
+        
     &::after
         content: ''
         position: absolute
@@ -380,7 +381,7 @@ body._screen.lock
         border-left: 20px solid var(--black)
         border-bottom: 10px solid transparent
         top: 50%
-        left: 50.70%
+        left: 50%
         transform: translate(-50%,-50%)
 
     &::after, &::before
@@ -390,6 +391,18 @@ body._screen.lock
     &.video__state_playing::after, &.video__state_playing::before
         opacity: 0
         user-select: none
+
+    &.section-05__video::before
+        background: var(--action-third)
+        padding: 40px
+        @media(max-width: 768px)
+            padding: 30px
+    &.section-05__video_end::before
+        background: none
+    &.section-05__video::after
+        border-top: 8px solid transparent
+        border-left: 15px solid var(--white)
+        border-bottom: 8px solid transparent
 
 .section
     &__background-img
@@ -564,16 +577,16 @@ body._screen.lock
     justify-content: center
     align-items: center
     text-align: center
-    position: absolute
+    position: relative
     width: 100%
-    height: 100%
+    height: 100vh
+    padding: 50px 30px
     overflow: hidden
-    @media(max-width: 768px)
-        padding: 0 30px
     @media(max-width: 500px)
         height: 110%
     @media(max-width: 500px)
         height: 120%
+            
     &__img
         width: 100%
         position: absolute
@@ -635,6 +648,104 @@ body._screen.lock
     &__btn
         max-width: 210px
         width: 100%
+
+.section-05
+    background: url('../img/webp/image-13.webp') center/cover no-repeat
+    color: var(--white)
+    height: 1476px
+    display: flex
+    align-items: center
+    position: relative
+    &::after 
+        content: ''
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        background: rgba(1, 10, 32, 0.7)
+    &>div
+        z-index: 2
+        position: relative
+    &__title
+        text-align: center
+        // color: var(--white)
+        line-height: 1.19em 
+    &__end
+        display: flex
+        justify-content: space-between
+        @media(max-width: 1024px)
+            flex-direction: column
+            row-gap: 40px
+            align-items: center
+    &__info
+        display: flex
+        align-items: center
+        column-gap: 40px
+        @media(max-width: 768px)
+            flex-direction: column
+            text-align: center
+            row-gap: 40px
+            width: 100%
+    &__video 
+        margin: 70px 0 125px 0
+        @media(max-width: 768px)
+            margin: 40px 0
+    &__video video
+        border-radius: 10px
+        max-height: 594px
+        width: 100%
+        object-fit: cover
+    &__video_end 
+        width: 233px
+        margin: 0px
+        @media(max-width: 768px)
+            width: 100%
+    &__video_end video
+        border-radius: 5px
+        height: 151px
+        width: 100%
+    &__subtitle
+        font-family: var(--db)
+        font-size: 1rem
+        line-height: 1.5em
+        margin-bottom: 15px
+    &__paragraph
+        font-family: var(--dr)
+        font-size: 1rem
+        letter-spacing: 0.02777em
+        line-height: 1.5555em
+        max-width: 334px
+        width: 100%
+
+.section-06
+    // height: 1383px
+    // display: flex
+    // flex-direction: column
+    // justify-content: center
+    &__paragraph
+        @extend %paragraph
+        line-height: 1.55em
+        color: var(--paragraph-dark)
+        letter-spacing: 0.01em
+        max-width: 511px
+        width: 100%
+        text-align: center
+    &__info
+        display: flex
+        flex-direction: column
+        align-items: center
+        row-gap: 41.83px
+    &__gallary
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: repeat(4, 210px)
+        gap: 30px
+    &__item
+        display: block
+    &__item:nth-of-type(1)
+        grid-column: span 1
+        grid-row: span 3
         
 
 .slider
@@ -689,11 +800,6 @@ body._screen.lock
         height: 100%
         object-fit: cover
         border-radius: 10px
-
-
-
-
-
 
 
 

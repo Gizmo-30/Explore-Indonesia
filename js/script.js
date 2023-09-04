@@ -87,6 +87,10 @@ const videoBlock = document.querySelectorAll('.video'),
 
 videoBlock.forEach(element => {
     element.addEventListener('click', () => {
+        // videoBlock.forEach(item => {
+        //     video.pause()
+        //     item.classList.remove('video__state_playing')
+        // });
         if (video.paused) {
             video.play()
             element.classList.add('video__state_playing')
